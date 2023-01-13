@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #BDB76B;
+}
+
+.side {
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 200px;
+}
+
+ul {
+    list-style: none;
+}
+
+/*Внешний вид меню*/
+
+.title {
+    border: 1px solid #3d3d3d;
+}
+
+
+.title_list {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.title_list:hover {
+    cursor: pointer;
+}
+
+
+/*Всплывающее меню*/
+
+.title_list {
+    position: relative;
+    border-bottom: 1px solid #666;
+    font-size: 14px;
+}
+
+.title_list:last-child{
+    border-bottom: none;
+}
+
+.title_drop {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    top: -9999em;
+    opacity: 0;
+}
+
+.title_list:hover .title_drop {
+    cursor: pointer;
+    opacity: 1;
+    top: -1px;
+}
+
+/*карточка*/
+.card {
+    width: 200px;
+    border: 1px solid #3d3d3d;
+    min-height: 215px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.card-img {
+    width: 200px;
+    height: 100px; 
+}
+
+.card-name {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.description {
+    padding-left: 5px;
+    justify-content: flex-start;
+}
+
+.rating::after {
+    content:'★';
+    color: #FFFF00;
+    margin-left: 2px;
+}
+
+.selected {
+    opacity: 0.6;
+  }
