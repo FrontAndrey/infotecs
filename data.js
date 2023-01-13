@@ -1,4 +1,5 @@
 const dataFunction = () => {
+
     const cards = document.querySelector('.title')
 
     fetch(`https://a-4aa6d-default-rtdb.firebaseio.com/db.json?_limit=10`)
@@ -12,7 +13,6 @@ const dataFunction = () => {
 
 
     const renderItems = (data) => {
-
         data.forEach(({
             title,
             description,
@@ -24,12 +24,14 @@ const dataFunction = () => {
             elem.classList.add('title_list')
 
             elem.innerHTML = `
-            <li class="title-li">${title}
+            ${title}
                 <ul class="title_drop">
                         <li><div class="card">
                             <img class="card-img" src="${images}" alt="${title}">
                             <div class="card-name">
                                 <div class="title-name">${title}</div>
+                                </div>
+                            <div class="card-price">
                                 <div class="price">${price} $</div>
                                 <div class="rating">${rating}</div>
                             </div>
@@ -37,14 +39,15 @@ const dataFunction = () => {
                         </div>
                         </li>
                     </ul>
-            </li>
+            
             `
             cards.append(elem)
+
+            dragAndDrop()
         });
+
 
     }
 }
 
-export {
-    dataFunction
-};
+dataFunction()

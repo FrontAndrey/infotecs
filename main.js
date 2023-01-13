@@ -54,6 +54,3 @@ const dragAndDrop = () => {
         taskListElement.insertBefore(activeElement, currentElement);
     });
 }
-export {
-    dragAndDrop
-};
