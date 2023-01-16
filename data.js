@@ -1,7 +1,7 @@
 const dataFunction = () => {
 
     const cards = document.querySelector('.title')
-
+    //Получаем данные с firebase
     fetch(`https://a-4aa6d-default-rtdb.firebaseio.com/db.json?_limit=10`)
         .then((response) => response.json())
         .then((data) => {
@@ -11,7 +11,7 @@ const dataFunction = () => {
             console.log(error);
         })
 
-
+    //Рендер дата-значений, для создания карточки товара
     const renderItems = (data) => {
         data.forEach(({
             title,
@@ -22,7 +22,7 @@ const dataFunction = () => {
         }) => {
             const elem = document.createElement('li');
             elem.classList.add('title_list')
-
+            // Создаем карточку по верстке для автозаполнения    
             elem.innerHTML = `
             ${title}
                 <ul class="title_drop">
@@ -41,8 +41,9 @@ const dataFunction = () => {
                     </ul>
             
             `
+            //Добавляем карточку в конец списка
             cards.append(elem)
-
+            //Вызываем функцию для перемещения элементов по списку
             dragAndDrop()
         });
 
